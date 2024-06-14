@@ -1,0 +1,33 @@
+.header-page{
+  display: flex;
+  align-items: center;
+  .search-bar{
+    flex: auto;
+    text-align: center;
+  }
+  .nav-right-bar{
+    width: auto;
+    display: flex;
+    gap: 8px;
+    .ant-badge {
+      color: #bbbcbf;
+    }
+    .badge-bar{
+      cursor: pointer;
+    }
+    .badge-bar:hover{
+      color: #fff;
+    }
+  }
+}
+.title-bar{
+  display: flex;
+  justify-content: space-between;
+}
+.content-list-bar{
+  min-width: 50%;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
