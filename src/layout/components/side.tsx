@@ -43,8 +43,8 @@ const Side: React.FC<Props> = () => {
   return (
     <>
       <div className='side-page'>
+        <AppLabel size={32}>抖音</AppLabel>
         <div className='content-bar'>
-          <AppLabel size={32}>抖音</AppLabel>
           <Menu
             onClick={onselect}
             selectedKeys={selectKeys}
