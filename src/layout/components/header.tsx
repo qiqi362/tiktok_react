@@ -90,7 +90,7 @@ const Header: React.FC = () => {
       <div className="header-page">
         <div className="search-bar">
           <AutoComplete options={options} onSearch={onSearch}>
-            <Input.Search defaultValue={searchValue} placeholder='搜索你感兴趣的内容' onClick={onInput} />
+            <Input.Search className='search-input' defaultValue={searchValue} placeholder='搜索你感兴趣的内容' onClick={onInput} />
           </AutoComplete>
         </div>
         <div className="nav-right-bar">

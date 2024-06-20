@@ -1,9 +1,43 @@
 .header-page{
+  height: 36px;
   display: flex;
   align-items: center;
+  align-items: center;
   .search-bar{
+    height: 36px;
     flex: auto;
     text-align: center;
+    .ant-select-selector{
+      width: 360px;
+      input, button{
+        height: 36px;
+        background-color:inherit;
+      }
+      input{
+        border-right: 0;
+      }
+      input::placeholder{
+        color: #616569;
+      }
+      button{
+        border-left: 0;
+      }
+      .ant-btn-icon{
+        color: #eaeaeb;
+      }
+      .search-input:hover input, .ant-input:focus{
+        border-color: #eaeaeb;
+      }
+      .search-input:hover button{
+        background-color: #eaeaeb;
+      }
+      .search-input:hover .ant-btn-icon{
+        color: inherit;
+      }
+    }
+    .ant-input{
+      color: #fff !important;
+    }
   }
   .nav-right-bar{
     width: auto;
