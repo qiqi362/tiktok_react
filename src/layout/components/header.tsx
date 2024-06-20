@@ -1,6 +1,6 @@
 import React, { useState, ReactNode } from 'react'
 
-import { AutoComplete, Input, Button, Badge } from 'antd'
+import { AutoComplete, Input, Button, Badge, Modal } from 'antd'
 import {
   SyncOutlined, UserOutlined,
   PayCircleOutlined, DownloadOutlined, ThunderboltOutlined, FormatPainterOutlined,
@@ -8,6 +8,7 @@ import {
 } from '@ant-design/icons'
 import '../style/header.scss'
 import AppLabel from '@/components/app/label'
+import LoginIndex from './login'
 
 const renderTitle = (label: string, iconName?:string, icon?: ReactNode) => {
   return (
@@ -78,12 +79,16 @@ const Header: React.FC = () => {
   ]
   const [options, setOptions] = useState([{}])
   const [searchValue, setSearchValue] = useState('')
+  const [isLoginModal, setIsLoginModal] = useState(false)
   const onSearch = (value: string) => {
     setSearchValue(value)
     setOptions(value ? searchResult(value) : initOptions)
   }
   const onInput = () => {
     setOptions(searchValue ? searchResult(searchValue) : initOptions)
+  }
+  const onLogin = () => {
+    setIsLoginModal(true)
   }
   return (
     <>
@@ -95,9 +100,12 @@ const Header: React.FC = () => {
         </div>
         <div className="nav-right-bar">
           {renderNavRight()}
-          <Button type="primary" icon={<UserOutlined />} danger>登录</Button>
+          <Button type="primary" icon={<UserOutlined />} danger onClick={onLogin}>登录</Button>
         </div>
       </div>
+      <Modal open={isLoginModal} footer={null}>
+        <LoginIndex></LoginIndex>
+      </Modal>
     </>
   )
 }
